@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Livrable IT-Fix — Build &amp; Ship</title>
+<style>
+  @page { size: A4; margin: 14mm 16mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.45;
+    font-size: 11pt;
+  }
+  .page {
+    max-width: 180mm;
+    margin: 0 auto;
+  }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 2px solid #2b56d8; padding-bottom: 8px; margin-bottom: 14px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .logo {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: #2b56d8; color: white; display: grid; place-items: center;
+    font-weight: 700; font-size: 13px;
+  }
+  h1 {
+    font-size: 18pt; margin: 0; line-height: 1.1;
+  }
+  .sub { color: #64748b; font-size: 10pt; }
+
+  h2 {
+    font-size: 11pt; text-transform: uppercase; letter-spacing: 0.04em;
+    color: #2b56d8; margin: 14px 0 6px;
+    border-bottom: 1px solid #e2e8f0; padding-bottom: 3px;
+  }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; }
+  .field { margin-bottom: 6px; }
+  .field-label { font-weight: 600; color: #334155; font-size: 9.5pt; }
+  .field-value { color: #0f172a; font-size: 11pt; word-break: break-all; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 10pt; }
+  table th, table td {
+    text-align: left; padding: 6px 8px; border-bottom: 1px solid #e2e8f0;
+  }
+  table th { color: #334155; font-weight: 600; background: #f7f8fb; }
+
+  .box {
+    border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 12px;
+    background: #f7f8fb; font-size: 10pt;
+  }
+  .mono { font-family: "Consolas", "Menlo", monospace; font-size: 10pt; }
+  footer {
+    margin-top: 14px; padding-top: 8px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 9pt; color: #64748b;
+    display: flex; justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="brand">
+    <div class="logo">IT</div>
+    <div>
+      <h1>IT-Fix — Support Informatique</h1>
+      <div class="sub">Projet "Build &amp; Ship" · Architecture Cloud &amp; Vibe Programming · 2025-2026</div>
+    </div>
+  </div>
+  <div style="text-align:right; font-size:10pt;">
+    <div><strong>Rendu</strong> · 10/05/2026</div>
+    <div class="sub">ESTIN — Mme Rania SAIDI</div>
+  </div>
+</header>
+
+<h2>Équipe &amp; Thème</h2>
+<div class="grid2">
+  <div>
+    <div class="field">
+      <div class="field-label">Thème (roulette)</div>
+      <div class="field-value">Support Informatique « IT-Fix »</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Mapping</div>
+      <div class="field-value" style="font-size:10pt;">
+        A = Employés · B = Techniciens · C = Tickets de panne · Fichier = Capture d'écran du bug
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="field">
+      <div class="field-label">Membres</div>
+      <div class="field-value">
+        Rania SAIDI<br/>
+        Manel KHOUNI<br/>
+        Raghed Nesrine ARIF
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Liens du projet</h2>
+<table>
+  <tr>
+    <th style="width:32%;">Ressource</th>
+    <th>URL</th>
+  </tr>
+  <tr>
+    <td>🚀 Application en production (Vercel)</td>
+    <td class="mono">https://project-it-fix.vercel.app</td>
+  </tr>
+  <tr>
+    <td>📦 Dépôt GitHub</td>
+    <td class="mono">https://github.com/raniasss/project-IT-Fix</td>
+  </tr>
+  <tr>
+    <td>🗄️ Base de données</td>
+    <td>Supabase (PostgreSQL cloud) — URL : voir <span class="mono">README.md</span></td>
+  </tr>
+</table>
+
+<h2>Compte de test</h2>
+<div class="box">
+  <div><strong>Email :</strong> <span class="mono">demo@it-fix.dz</span></div>
+  <div><strong>Mot de passe :</strong> <span class="mono">demoitfix</span></div>
+  <div class="sub" style="margin-top:4px;">
+    Ce compte contient déjà des tickets de démonstration et permet à l'enseignant de
+    tester l'authentification, la création de ticket, l'upload de capture d'écran
+    et l'isolation RLS.
+  </div>
+</div>
+
+<h2>Stack technologique</h2>
+<table>
+  <tr>
+    <th style="width:28%;">Couche</th>
+    <th>Technologie</th>
+    <th>Rôle</th>
+  </tr>
+  <tr><td>Frontend</td><td>Next.js 14 (App Router) + Tailwind CSS</td><td>UI, rendu serveur, formulaires</td></tr>
+  <tr><td>Authentification</td><td>Supabase Auth (email / password)</td><td>Sessions JWT, inscription</td></tr>
+  <tr><td>Base de données</td><td>Supabase Postgres + Row Level Security</td><td>Tables A/B/C, isolation par utilisateur</td></tr>
+  <tr><td>Stockage fichiers</td><td>Supabase Storage (bucket privé)</td><td>Captures d'écran des bugs</td></tr>
+  <tr><td>Hébergement &amp; CI/CD</td><td>Vercel connecté à GitHub</td><td>Déploiement automatique à chaque push</td></tr>
+</table>
+
+<footer>
+  <span>IT-Fix · Livrable PFM "Build &amp; Ship" 2025-2026</span>
+  <span>Page 1/1</span>
+</footer>
+
+</div>
+</body>
+</html>
